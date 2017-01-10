@@ -11,7 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ArrayAdapter;
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends AppBasicActivity {
     private FilmData filmData;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter rvAdapter;
