@@ -15,7 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
-import java.util.Random;
+import java.util.List;
 
 public class AppBasicActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -23,6 +23,7 @@ public class AppBasicActivity extends AppCompatActivity
     private DrawerLayout drawer;
     private NavigationView navigationView;
     private Toolbar toolbar;
+    FilmData filmData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,8 @@ public class AppBasicActivity extends AppCompatActivity
         setContentView(R.layout.activity_app_basic);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        filmData = new FilmData(this);
+        filmData.open();
 
        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -38,8 +41,8 @@ public class AppBasicActivity extends AppCompatActivity
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
-*/
+        });*/
+
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -50,7 +53,7 @@ public class AppBasicActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    @Override
+  /*  @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -59,7 +62,7 @@ public class AppBasicActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-
+*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -73,16 +76,22 @@ public class AppBasicActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        switch (id){
+            case R.id.random_films:
+                List<Film> films = filmData.getAllFilms();
+                for(Film f : films){
+                    filmData.deleteFilm(f);
+                }
+                Film film = new Film();
+                film.setDirector("Ridley Scoot");
+                film.setTitle("Blade Runner");
+                film.setCountry("USA");
+                film.setYear(1982);
+                film.setProtagonist("Harrison Ford");
+                film.setCritics_rate(8);
+                filmData.createFilm(film);
+        }
 
-        /*switch (id){
-            case R.id.add:
-
-                break;
-            case R.id.delete:
-
-                break;
-
-        }*/
         //noinspection SimplifiableIfStatement
        /* switch(id){
             case R.id.infoApp:
@@ -102,6 +111,9 @@ public class AppBasicActivity extends AppCompatActivity
         switch(id){
             case R.id.iniHome:
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                break;
+            case R.id.inici:
+                startActivity(new Intent(getApplicationContext(), Inici.class));
                 break;
             /*case R.id.afegir_peli:
                 startActivity(new Intent(getApplicationContext(),AfegirPeli.class));

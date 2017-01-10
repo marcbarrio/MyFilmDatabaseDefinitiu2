@@ -4,6 +4,7 @@ import android.content.Context;
 import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +23,7 @@ import java.util.List;
 public class MiRecyclerViewAdapter extends RecyclerView.Adapter<MiRecyclerViewAdapter.CustomViewHolder> {
 
     private List<Film> films;
-    private Context miContext;
+    //private Context miContext;
     private View v;
 
 
@@ -42,7 +43,10 @@ public class MiRecyclerViewAdapter extends RecyclerView.Adapter<MiRecyclerViewAd
     @Override
     public void onBindViewHolder(CustomViewHolder customViewHolder, int i){
         Film film = films.get(i);
-        customViewHolder.lligarFilm(film);
+        customViewHolder.HolderTitle.setText(film.getTitle());
+        customViewHolder.HolderDirector.setText(film.getDirector());
+        customViewHolder.HolderAny.setText(String.valueOf(film.getYear()));
+        Log.d("onBindBiewHolder", film.getTitle());
     }
 
     @Override
@@ -53,7 +57,7 @@ public class MiRecyclerViewAdapter extends RecyclerView.Adapter<MiRecyclerViewAd
     class CustomViewHolder extends RecyclerView.ViewHolder
             /*implements View.OnClickListener, View.OnLongClickListener*/ {
         private Film HolderFilm;
-        private TextView HolderTitle, HolderDirector, HolderAny;
+        public TextView HolderTitle, HolderDirector, HolderAny;
         //tvDirector, tvProtagonist;
 
         public CustomViewHolder (View view) {
@@ -67,12 +71,12 @@ public class MiRecyclerViewAdapter extends RecyclerView.Adapter<MiRecyclerViewAd
             view.setOnLongClickListener(this);*/
         }
 
-        public void lligarFilm(Film film){
+        /*public void lligarFilm(Film film){
             HolderFilm = film;
             HolderTitle.setText(HolderFilm.getTitle());
             HolderDirector.setText(HolderFilm.getDirector());
             HolderAny.setText(HolderFilm.getYear());
 
-        }
+        }*/
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
         <item
@@ -7,15 +8,41 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Pelis" />
         <item
+            android:id="@+id/inici"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Home" />
+
+        <item
             android:id="@+id/afegir_peli"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Afegir Peli" />
         <item
-            android:id="@+id/afegir_peli"
+            android:id="@+id/cercar"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Buscar" />
-    </group>
 
+      <!--  <LinearLayout
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add New"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete First"
+                android:onClick="onClick"/>
+
+        </LinearLayout>
+        -->
+    </group>
 
     <!--<item android:title="Communicate">
         <menu>

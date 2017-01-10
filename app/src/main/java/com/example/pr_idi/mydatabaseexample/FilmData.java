@@ -21,8 +21,16 @@ public class FilmData {
     private MySQLiteHelper dbHelper;
 
     // Here we only select Title and Director, must select the appropriate columns
-    private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
-            MySQLiteHelper.COLUMN_TITLE, MySQLiteHelper.COLUMN_DIRECTOR};
+    private String[] allColumns = {
+            MySQLiteHelper.COLUMN_ID,
+            MySQLiteHelper.COLUMN_TITLE,
+            MySQLiteHelper.COLUMN_DIRECTOR,
+            MySQLiteHelper.COLUMN_COUNTRY,
+            MySQLiteHelper.COLUMN_YEAR_RELEASE,
+            MySQLiteHelper.COLUMN_PROTAGONIST,
+            MySQLiteHelper.COLUMN_CRITICS_RATE
+
+    };
 
     public FilmData(Context context) {
         dbHelper = new MySQLiteHelper(context);

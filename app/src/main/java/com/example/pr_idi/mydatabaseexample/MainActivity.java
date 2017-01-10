@@ -8,6 +8,7 @@ import android.app.ListActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 
@@ -23,25 +24,31 @@ public class MainActivity extends AppBasicActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        filmData = new FilmData(this);
+        filmData.open();
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-
         rvManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(rvManager);
+
+        rvAdapter = new MiRecyclerViewAdapter(filmData.getAllFilms());
+        recyclerView.setAdapter(rvAdapter);
+        Log.d("Main Activity", "--OnCreate--");
     }
 
-    @Override
+   /* @Override
     public void onResume(){
         super.onResume();
 
         filmData = new FilmData(this);
         filmData.open();
-        String ordreAny = MySQLiteHelper.COLUMN_YEAR_RELEASE;
-        films = this.filmData.getAllFilmsOrder(ordreAny);
+        //String ordreAny = MySQLiteHelper.COLUMN_YEAR_RELEASE;
+        films = this.filmData.getAllFilms();
         rvAdapter = new MiRecyclerViewAdapter(this.films);
         recyclerView.setAdapter(rvAdapter);
+        Log.d("Adapter", "Adapter Set");
 
-    }
+    }*/
 /*
     @Override
     public void onCreate(Bundle savedInstanceState) {
