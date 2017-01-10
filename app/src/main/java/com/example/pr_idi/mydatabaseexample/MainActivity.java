@@ -30,8 +30,8 @@ public class MainActivity extends AppBasicActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         rvManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(rvManager);
-
-        rvAdapter = new MiRecyclerViewAdapter(filmData.getAllFilms());
+        String ordreAny = MySQLiteHelper.COLUMN_YEAR_RELEASE;
+        rvAdapter = new MiRecyclerViewAdapter(filmData.getAllFilmsOrder(ordreAny));
         recyclerView.setAdapter(rvAdapter);
         Log.d("Main Activity", "--OnCreate--");
     }
