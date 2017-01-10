@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\Androidfilmdatabase\MyFilmDatabaseBona\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="D:\Androidfilmdatabase\MyFilmDatabaseBona\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.1.0_be6633e239e68f1794ceec286a7b9564c6dcd34d.jar" />
+    </item>
+    <item
+        jar="D:\Androidfilmdatabase\MyFilmDatabaseBona\app\build\intermediates\exploded-aar\com.android.support\design\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1821601ddbec5ff125653097812823388700af74">
+        <dex dex="D:\Androidfilmdatabase\MyFilmDatabaseBona\app\build\intermediates\pre-dexed\debug\com.android.support-design-22.2.1_5e776ac00c00214c89a757a232bac94b9768437f.jar" />
+    </item>
+    <item
+        jar="D:\Androidfilmdatabase\MyFilmDatabaseBona\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
+        <dex dex="D:\Androidfilmdatabase\MyFilmDatabaseBona\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.1.0_c4a5496132f360f9f944092c2ff843cb02bf297d.jar" />
+    </item>
+    <item
+        jar="D:\Androidfilmdatabase\MyFilmDatabaseBona\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="D:\Androidfilmdatabase\MyFilmDatabaseBona\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1_fa3ac53cb124f708cdddb548235fe944ca487010.jar" />
+    </item>
+    <item
+        jar="D:\Androidfilmdatabase\MyFilmDatabaseBona\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="D:\Androidfilmdatabase\MyFilmDatabaseBona\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.1.0_b60bd0386e5b57a301d94ae02cd7b5bf7ca2d799.jar" />
+    </item>
+    <item
+        jar="D:\Androidfilmdatabase\MyFilmDatabaseBona\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="D:\Androidfilmdatabase\MyFilmDatabaseBona\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-22.2.1_efa82184e8b41d4f82cf892597bbb57e621dabc9.jar" />
+    </item>
+    <item
+        jar="D:\Androidfilmdatabase\MyFilmDatabaseBona\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="D:\Androidfilmdatabase\MyFilmDatabaseBona\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-22.2.1_41ccb7b693dceba772cb39df6d07c94c029d690b.jar" />
+    </item>
+    <item
+        jar="D:\androidsdk\extras\android\m2repository\com\android\support\support-annotations\25.1.0\support-annotations-25.1.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="D:\Androidfilmdatabase\MyFilmDatabaseBona\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.0_c2175448e847db51c7e983f719e79eac586a9f32.jar" />
+    </item>
+
+</items>
