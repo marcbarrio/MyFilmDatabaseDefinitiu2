@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <!--
     <LinearLayout
@@ -36,8 +37,39 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/list_main_activity" />
+        android:layout_height="402dp"
+        android:id="@+id/list_main_activity"
+        android:layout_weight="0.80" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="54dp">
+
+        <Button
+            android:text="Nota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/order_nota"
+            android:onClick="onClick"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="Títol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/order_title"
+            android:onClick="onClick"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="Any"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/order_year"
+            android:onClick="onClick"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 
 </LinearLayout>
