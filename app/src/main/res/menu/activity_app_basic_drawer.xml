@@ -8,9 +8,9 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Pelis" />
         <item
-            android:id="@+id/inici"
+            android:id="@+id/database"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Home" />
+            android:title="Pelis Recycler" />
 
         <item
             android:id="@+id/afegir_peli"

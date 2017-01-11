@@ -22,4 +22,12 @@
         app:headerLayout="@layout/nav_header_app_basic"
         app:menu="@menu/activity_app_basic_drawer" />
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frame_layout_drawer">
+
+    </FrameLayout>
+
+
 </android.support.v4.widget.DrawerLayout>

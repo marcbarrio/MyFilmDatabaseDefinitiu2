@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -20,7 +22,7 @@ import java.util.List;
 public class AppBasicActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private DrawerLayout drawer;
+    protected DrawerLayout drawer;
     private NavigationView navigationView;
     private Toolbar toolbar;
     FilmData filmData;
@@ -33,7 +35,7 @@ public class AppBasicActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         filmData = new FilmData(this);
         filmData.open();
-
+        Log.d("Base Activity","OnCreate");
        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +53,7 @@ public class AppBasicActivity extends AppCompatActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
     }
 
   /*  @Override
@@ -67,6 +70,7 @@ public class AppBasicActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.app_basic, menu);
+        Log.d("Base","onCreateOptionsMenu");
         return true;
     }
 
@@ -76,6 +80,7 @@ public class AppBasicActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        Log.d("Base","onOptionsItemSelected");
         switch (id){
             case R.id.random_films:
                 List<Film> films = filmData.getAllFilms();
@@ -90,6 +95,15 @@ public class AppBasicActivity extends AppCompatActivity
                 film.setProtagonist("Harrison Ford");
                 film.setCritics_rate(8);
                 filmData.createFilm(film);
+                break;
+            case R.id.databaseoptions:
+                Log.d("fdghsdgfds","sdfgwse");
+                startActivity(new Intent(getApplicationContext(), RecyclerActivity.class));
+                break;
+            case R.id.afegir_pelioptions:
+                startActivity(new Intent(getApplicationContext(),AfegirPeli.class));
+                break;
+
         }
 
         //noinspection SimplifiableIfStatement
@@ -107,18 +121,21 @@ public class AppBasicActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        Log.d("ID:",String.valueOf(id));
+        Log.d("Base","onNavItemSel");
         switch(id){
             case R.id.iniHome:
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 break;
-            case R.id.inici:
-                startActivity(new Intent(getApplicationContext(), Inici.class));
+            case R.id.database:
+                Log.d("fdghsdgfds","sdfgwse");
+                startActivity(new Intent(getApplicationContext(), RecyclerActivity.class));
                 break;
-            /*case R.id.afegir_peli:
+
+            case R.id.afegir_peli:
                 startActivity(new Intent(getApplicationContext(),AfegirPeli.class));
                 break;
-            case R.id.cercar:
+            /*case R.id.cercar:
                 startActivity(new Intent(getApplicationContext(),Cercar.class));
                 break;
 */
@@ -127,6 +144,33 @@ public class AppBasicActivity extends AppCompatActivity
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void setContentView(int layoutResID) {
+        Log.d("Base","setContentView");
+        DrawerLayout fullLayout = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_app_basic, null);
+        FrameLayout frameLayout = (FrameLayout) fullLayout.findViewById(R.id.frame_layout_drawer);
+
+        getLayoutInflater().inflate(layoutResID, frameLayout, true);
+
+        super.setContentView(fullLayout);
+        setView();
+    }
+
+    protected void setView() {
+        Log.d("Base","setView");
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
 }
