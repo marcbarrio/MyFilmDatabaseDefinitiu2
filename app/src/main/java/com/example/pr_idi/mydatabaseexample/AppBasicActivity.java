@@ -22,17 +22,17 @@ import java.util.List;
 public class AppBasicActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    protected DrawerLayout drawer;
-    private NavigationView navigationView;
-    private Toolbar toolbar;
+    //protected DrawerLayout drawer;
+    //private NavigationView navigationView;
+    //private Toolbar toolbar;
     FilmData filmData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_app_basic);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        super.setContentView(R.layout.activity_app_basic);
+        //toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
         filmData = new FilmData(this);
         filmData.open();
         Log.d("Base Activity","OnCreate");
@@ -44,19 +44,12 @@ public class AppBasicActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });*/
+        setView();
 
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
 
     }
 
-  /*  @Override
+    @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -65,7 +58,7 @@ public class AppBasicActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-*/
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -83,26 +76,43 @@ public class AppBasicActivity extends AppCompatActivity
         Log.d("Base","onOptionsItemSelected");
         switch (id){
             case R.id.random_films:
+                String ordreAny = MySQLiteHelper.COLUMN_YEAR_RELEASE;
                 List<Film> films = filmData.getAllFilms();
                 for(Film f : films){
                     filmData.deleteFilm(f);
                 }
                 Film film = new Film();
-                film.setDirector("Ridley Scoot");
-                film.setTitle("Blade Runner");
+                film.setDirector("David Fincher");
+                film.setTitle("Fight Club");
                 film.setCountry("USA");
-                film.setYear(1982);
-                film.setProtagonist("Harrison Ford");
+                film.setYear(1999);
+                film.setProtagonist("Brad Pitt");
                 film.setCritics_rate(8);
                 filmData.createFilm(film);
+                film.setDirector("Francis Ford Coppola");
+                film.setTitle("The GodFather");
+                film.setCountry("USA");
+                film.setYear(1972);
+                film.setProtagonist("Marlon Brando");
+                film.setCritics_rate(10);
+                filmData.createFilm(film);
+                film.setDirector("Steven Spielberg");
+                film.setTitle("The Schindler's List");
+                film.setCountry("USA");
+                film.setYear(1993);
+                film.setProtagonist("Liam Neeson");
+                film.setCritics_rate(9);
+                filmData.createFilm(film);
+                film.setDirector("Roberto Benigni");
+                film.setTitle("La vita è bella");
+                film.setCountry("Italia");
+                film.setYear(1997);
+                film.setProtagonist("Roberto Benigni");
+                film.setCritics_rate(8);
+                filmData.createFilm(film);
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 break;
-            case R.id.databaseoptions:
-                Log.d("fdghsdgfds","sdfgwse");
-                startActivity(new Intent(getApplicationContext(), RecyclerActivity.class));
-                break;
-            case R.id.afegir_pelioptions:
-                startActivity(new Intent(getApplicationContext(),AfegirPeli.class));
-                break;
+
 
         }
 
@@ -135,18 +145,24 @@ public class AppBasicActivity extends AppCompatActivity
             case R.id.afegir_peli:
                 startActivity(new Intent(getApplicationContext(),AfegirPeli.class));
                 break;
+            case R.id.help:
+                startActivity(new Intent(getApplicationContext(), help.class));
+                break;
+            case R.id.About:
+                startActivity(new Intent(getApplicationContext(),About.class));
+                break;
             /*case R.id.cercar:
                 startActivity(new Intent(getApplicationContext(),Cercar.class));
                 break;
 */
         }
 
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    @Override
+   @Override
     public void setContentView(int layoutResID) {
         Log.d("Base","setContentView");
         DrawerLayout fullLayout = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_app_basic, null);

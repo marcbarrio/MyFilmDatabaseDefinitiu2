@@ -37,6 +37,9 @@ public class RecyclerActivity extends AppBasicActivity {
         rvAdapter = new MiRecyclerViewAdapter(filmData.getAllFilmsOrder(ordreAny));
         recyclerView.setAdapter(rvAdapter);
         Log.d("Main Activity", "--OnCreate--");
+
+
     }
+
 
 }

@@ -21,11 +21,26 @@
             android:name=".AppBasicActivity"
             android:label="@string/title_activity_app_basic"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AfegirPeli" />
+        <activity
+            android:name=".AfegirPeli"
+            android:label="Afegir Pel·lícula"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RecyclerActivity"
             android:label="@string/title_activity_recycler"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DetailFilm"
+            android:label="@string/title_activity_detail_film"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".help"
+            android:label="Help"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".About"
+            android:label="@string/title_activity_about"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

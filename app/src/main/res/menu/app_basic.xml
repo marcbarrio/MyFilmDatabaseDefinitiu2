@@ -11,18 +11,8 @@
     <item
         android:id="@+id/random_films"
         android:orderInCategory="100"
-        android:title="Posar Pelis Aleatories"
+        android:title="Resetejar pel·lícules mostra"
         app:showAsAction="never"
         />
-    <item
-        android:id="@+id/databaseoptions"
-        android:orderInCategory="100"
-        android:title="Recycler"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/afegir_pelioptions"
-        android:orderInCategory="100"
-        android:title="afegir peli"
-        app:showAsAction="never" />
 
 </menu>

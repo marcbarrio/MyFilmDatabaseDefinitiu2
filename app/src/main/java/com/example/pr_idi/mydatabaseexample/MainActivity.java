@@ -34,6 +34,7 @@ public class MainActivity extends AppBasicActivity {
                 android.R.layout.simple_list_item_1, values);
         ListView listView = (ListView) findViewById(R.id.list_main_activity);
         listView.setAdapter(adapter);
+
         Log.d("Main", "onResume");
     }
 
@@ -58,15 +59,15 @@ public class MainActivity extends AppBasicActivity {
         ListView listView = (ListView) findViewById(R.id.list_main_activity);
         listView.setAdapter(adapter);
         Log.d("Main","onCreate");
-        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String title = adapterView.getAdapter().getItem(i).toString();
+                String titol = adapterView.getAdapter().getItem(i).toString();
                 Intent intent = new Intent(getApplicationContext(), DetailFilm.class);
-                intent.putExtra("title",title);
+                intent.putExtra("titol",titol);
                 startActivity(intent);
             }
-        });*/
+        });
     }
 
     // Will be called via the onClick attribute

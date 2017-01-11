@@ -5,57 +5,37 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/iniHome"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Pelis" />
+            android:icon="?android:attr/actionModeFindDrawable"
+            android:title="Home" />
         <item
             android:id="@+id/database"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Pelis Recycler" />
+            android:icon="?android:attr/actionModeCopyDrawable"
+            android:title="Base de dades" />
 
         <item
             android:id="@+id/afegir_peli"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Afegir Peli" />
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="Afegir Pel·lícula" />
         <item
             android:id="@+id/cercar"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@android:drawable/ic_menu_search"
             android:title="Buscar" />
 
-      <!--  <LinearLayout
-            android:id="@+id/group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
 
-            <Button
-                android:id="@+id/add"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Add New"
-                android:onClick="onClick"/>
-
-            <Button
-                android:id="@+id/delete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Delete First"
-                android:onClick="onClick"/>
-
-        </LinearLayout>
-        -->
     </group>
 
-    <!--<item android:title="Communicate">
+    <item android:title="Extra">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/help"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Help" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/About"
+                android:icon="@drawable/ic_menu_share"
+                android:title="About" />
         </menu>
     </item>
-    -->
+
 
 </menu>

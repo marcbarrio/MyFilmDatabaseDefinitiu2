@@ -46,6 +46,7 @@ public class MiRecyclerViewAdapter extends RecyclerView.Adapter<MiRecyclerViewAd
         customViewHolder.HolderTitle.setText(film.getTitle());
         customViewHolder.HolderDirector.setText(film.getDirector());
         customViewHolder.HolderAny.setText(String.valueOf(film.getYear()));
+        customViewHolder.HolderRating.setText(String.valueOf(film.getCritics_rate()));
         Log.d("onBindBiewHolder", film.getTitle());
     }
 
@@ -57,7 +58,7 @@ public class MiRecyclerViewAdapter extends RecyclerView.Adapter<MiRecyclerViewAd
     class CustomViewHolder extends RecyclerView.ViewHolder
             /*implements View.OnClickListener, View.OnLongClickListener*/ {
         private Film HolderFilm;
-        public TextView HolderTitle, HolderDirector, HolderAny;
+        public TextView HolderTitle, HolderDirector, HolderAny, HolderRating;
         //tvDirector, tvProtagonist;
 
         public CustomViewHolder (View view) {
@@ -66,6 +67,7 @@ public class MiRecyclerViewAdapter extends RecyclerView.Adapter<MiRecyclerViewAd
             this.HolderTitle = (TextView) view.findViewById(R.id.titleTextView);
             this.HolderDirector = (TextView) view.findViewById(R.id.directorTextView);
             this.HolderAny = (TextView) view.findViewById(R.id.anyTextView);
+            this.HolderRating = (TextView) view.findViewById(R.id.rating_row);
 
            /* view.setOnClickListener(this);
             view.setOnLongClickListener(this);*/

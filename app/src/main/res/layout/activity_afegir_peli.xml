@@ -32,18 +32,6 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberSigned"
-        android:ems="10"
-        android:layout_marginTop="13dp"
-        android:id="@+id/anyCreate"
-        android:text="Any d'estrena"
-        android:selectAllOnFocus="true"
-        android:layout_below="@+id/paisCreate"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:text="Protagonista"
         android:ems="10"
@@ -51,19 +39,7 @@
         android:selectAllOnFocus="true"
         android:layout_below="@+id/directorCreate"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="18dp"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:text="Cancelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/cancel_create"
-        android:visibility="visible"
-        android:onClick="onClick"
-        android:layout_marginEnd="56dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/crear" />
+        android:layout_marginTop="18dp" />
 
     <Button
         android:text="Crear"
@@ -92,6 +68,19 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/notaCreate"
+        android:text="Nota"
+        android:selectAllOnFocus="true"
+        android:layout_alignBaseline="@+id/protaCreate"
+        android:layout_alignBottom="@+id/protaCreate"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/anyCreate" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:text="director"
         android:ems="10"
@@ -99,17 +88,30 @@
         android:selectAllOnFocus="true"
         android:layout_alignBaseline="@+id/anyCreate"
         android:layout_alignBottom="@+id/anyCreate"
-        android:layout_alignStart="@+id/paisCreate" />
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="numberSigned"
         android:ems="10"
-        android:layout_marginTop="11dp"
-        android:id="@+id/notaCreate"
-        android:text="Nota"
+        android:layout_marginTop="13dp"
+        android:id="@+id/anyCreate"
+        android:text="Any d'estrena"
         android:selectAllOnFocus="true"
-        android:layout_alignTop="@+id/protaCreate"
-        android:layout_alignStart="@+id/directorCreate" />
+        android:layout_below="@+id/titolCreate"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/paisCreate" />
+
+    <Button
+        android:text="Cancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cancel_create"
+        android:visibility="visible"
+        android:onClick="onClick"
+        android:layout_marginEnd="52dp"
+        android:layout_alignBaseline="@+id/crear"
+        android:layout_alignBottom="@+id/crear"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
